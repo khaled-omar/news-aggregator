@@ -3,10 +3,13 @@
 namespace App\Models;
 
 use app\Enums\NewsArticleSources;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
         'source',
         'title',
@@ -19,5 +22,4 @@ class Article extends Model
     protected $casts = [
         'source' => NewsArticleSources::class,
     ];
-
 }

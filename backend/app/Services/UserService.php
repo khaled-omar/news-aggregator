@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Hash;
 
 class UserService
 {
-
     public function __construct(protected UserRepositoryInterface $userRepository) {}
 
     /**
@@ -35,9 +34,9 @@ class UserService
     {
         /** @var User $user */
         $user = $this->userRepository->create([
-          'name' => $data['name'],
-          'email' => $data['email'],
-          'password' => Hash::make($data['password']),
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
         ]);
 
         $user->token = $user->createToken($data['email'])->plainTextToken;

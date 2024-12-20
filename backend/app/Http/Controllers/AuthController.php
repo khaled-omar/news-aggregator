@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
+use App\Http\Resources\UserResource;
 use app\Services\UserService;
 use Illuminate\Http\Request;
 
@@ -20,7 +21,7 @@ class AuthController extends Controller
     {
         $user = $this->userService->doLogin($request->validated());
 
-        return response()->json(['data' => $user]);
+        return new UserResource($user);
     }
 
     /**
@@ -30,7 +31,7 @@ class AuthController extends Controller
     {
         $user = $this->userService->doRegister($request->validated());
 
-        return response()->json(['data' => $user]);
+        return new UserResource($user);
     }
 
     /**
@@ -40,7 +41,7 @@ class AuthController extends Controller
     {
         $user = auth()->user();
 
-        return response()->json($user);
+        return new UserResource($user);
     }
 
     /**

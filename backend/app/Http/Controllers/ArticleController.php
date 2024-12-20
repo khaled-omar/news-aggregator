@@ -3,13 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ListArticleRequest;
-use App\Models\Article;
+use App\Http\Resources\ArticleResource;
 use App\Repositories\Contracts\ArticleRepositoryInterface;
 
 class ArticleController extends Controller
 {
-
-    public function __construct(protected ArticleRepositoryInterface $articleRepository ) {}
+    public function __construct(protected ArticleRepositoryInterface $articleRepository) {}
 
     /**
      * Display a listing of the resource.
@@ -18,7 +17,7 @@ class ArticleController extends Controller
     {
         $items = $this->articleRepository->simplePaginate();
 
-        return response()->json($items);
+        return ArticleResource::collection($items);
     }
 
     /**
@@ -28,6 +27,6 @@ class ArticleController extends Controller
     {
         $item = $this->articleRepository->findOrFail($article);
 
-        return response()->json($item);
+        return new ArticleResource($item);
     }
 }
