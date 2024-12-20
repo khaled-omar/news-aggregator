@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Services;
+namespace app\Services\News;
 
+use app\Enums\NewsArticleSources;
 use Carbon\Carbon;
 
 class NewsApiProvider extends BaseNewsProvider
@@ -24,9 +25,8 @@ class NewsApiProvider extends BaseNewsProvider
         return [
             'title' => $article['title'],
             'content' => $article['description'],
-            'source' => 'NewsAPI',
+            'source' => NewsArticleSources::NEWS_API,
             'published_at' => Carbon::parse($article['publishedAt']),
-            'remote_id' => $article['url'], // Unique identifier for deduplication
             'image_url' => $article['urlToImage'] ?? null,
             'url' => $article['url'],
         ];

@@ -9,8 +9,10 @@ Route::prefix('auth')->group(function () {
     Route::post('/login', [AuthController::class, 'login']);
 });
 
-Route::middleware('auth:sanctum')->group(function () {
-    Route::prefix('auth')->get('/me', [AuthController::class, 'me']);
+Route::prefix('auth')->middleware('auth:sanctum')->group(function () {
+    Route::get('/me', [AuthController::class, 'me']);
+});
 
+Route::middleware('auth:sanctum')->group(function () {
     Route::resource('/articles', ArticleController::class)->only(['index', 'show']);
 });

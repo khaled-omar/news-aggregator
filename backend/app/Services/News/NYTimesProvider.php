@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Services;
+namespace app\Services\News;
 
+use app\Enums\NewsArticleSources;
 use Carbon\Carbon;
 
 class NYTimesProvider extends BaseNewsProvider
@@ -23,7 +24,7 @@ class NYTimesProvider extends BaseNewsProvider
         return [
             'title' => $article['title'],
             'content' => $article['abstract'],
-            'source' => 'NYTimes',
+            'source' => NewsArticleSources::NEW_YORK_TIMES,
             'published_at' => Carbon::parse($article['published_date']) ?? now(),
             'image_url' => isset($article['multimedia'][1])
               ? $article['multimedia'][1]['url']

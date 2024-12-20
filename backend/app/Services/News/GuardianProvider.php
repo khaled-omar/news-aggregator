@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Services;
+namespace app\Services\News;
 
+use app\Enums\NewsArticleSources;
 use Carbon\Carbon;
 
 class GuardianProvider extends BaseNewsProvider
@@ -25,7 +26,7 @@ class GuardianProvider extends BaseNewsProvider
         return [
             'title' => $article['webTitle'],
             'content' => $article['fields']['trailText'],
-            'source' => 'The Guardian',
+            'source' => NewsArticleSources::GUARDIAN,
             'published_at' => Carbon::parse($article['webPublicationDate']) ?? now(),
             'image_url' => $article['fields']['thumbnail'] ?? null,
             'url' => $article['webUrl'],

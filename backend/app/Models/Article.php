@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use app\Enums\NewsArticleSources;
 use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
@@ -14,4 +15,9 @@ class Article extends Model
         'url',
         'published_at',
     ];
+
+    protected $casts = [
+        'source' => NewsArticleSources::class,
+    ];
+
 }

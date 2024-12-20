@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Services;
+namespace app\Services\News;
 
+use app\Services\Contracts\NewsProviderInterface;
 use Illuminate\Support\Facades\Http;
 
 abstract class BaseNewsProvider implements NewsProviderInterface

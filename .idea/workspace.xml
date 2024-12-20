@@ -4,7 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1a37e4b-e1db-4ed1-9c8f-2c20d2239742" name="Changes" comment="" />
+    <list default="true" id="f1a37e4b-e1db-4ed1-9c8f-2c20d2239742" name="Changes" comment="Add Repository layer">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/Providers/RepositoryServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/Repositories/ArticleRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/Repositories/BaseRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/Repositories/Contracts/ArticleRepositoryInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/Repositories/Contracts/BaseRepositoryInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/Repositories/Contracts/UserRepositoryInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/Repositories/UserRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/ArticleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/UserService.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Services/UserService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Models/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/Article.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Providers/NewsServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Providers/NewsServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Services/BaseNewsProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Services/News/BaseNewsProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Services/GuardianProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Services/News/GuardianProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Services/NYTimesProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Services/News/NYTimesProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Services/NewsAggregatorService.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Services/NewsAggregatorService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Services/NewsApiProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Services/News/NewsApiProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Services/NewsProviderInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Services/Contracts/NewsProviderInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/bootstrap/providers.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/bootstrap/providers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/database/migrations/2024_12_19_205700_create_articles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/migrations/2024_12_19_205700_create_articles_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +39,9 @@
   <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/frontend/package.json" />
@@ -136,6 +165,7 @@
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="2qRKszzGqQtFyXOiqE75fn7FXxq" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -145,6 +175,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;com.codeium.enabled&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;last_opened_file_path&quot;: &quot;/media/khaled/20986F6E986F41801/Work/Projects/news-app&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -152,6 +183,7 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;php.override.implement.member.chooser.php.doc&quot;: &quot;NONE&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
     &quot;ts.external.directory.path&quot;: &quot;/media/khaled/20986F6E986F41801/Work/Projects/news-app/frontend/node_modules/typescript/lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -182,11 +214,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1734620158726</updated>
-      <workItem from="1734620159829" duration="15272000" />
+      <workItem from="1734620159829" duration="22861000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/backend" />
+    </ignored-roots>
+    <MESSAGE value="Add Repository layer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Repository layer" />
   </component>
 </project>

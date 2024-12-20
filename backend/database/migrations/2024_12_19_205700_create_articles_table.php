@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('source');
             $table->string('title');
             $table->text('content')->nullable();
-            $table->string('image_url')->nullable();
-            $table->string('url')->nullable();
+            $table->text('image_url')->nullable();
+            $table->text('url')->nullable();
             $table->timestamp('published_at');
             $table->timestamps();
         });

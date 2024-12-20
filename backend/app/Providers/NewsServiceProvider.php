@@ -2,10 +2,11 @@
 
 namespace App\Providers;
 
-use App\Services\GuardianProvider;
+use App\Repositories\Contracts\ArticleRepositoryInterface;
+use app\Services\News\GuardianProvider;
+use app\Services\News\NewsApiProvider;
+use app\Services\News\NYTimesProvider;
 use App\Services\NewsAggregatorService;
-use App\Services\NewsApiProvider;
-use App\Services\NYTimesProvider;
 use Illuminate\Support\ServiceProvider;
 
 class NewsServiceProvider extends ServiceProvider
@@ -20,15 +21,8 @@ class NewsServiceProvider extends ServiceProvider
                 $app->make(NewsApiProvider::class),
                 $app->make(NYTimesProvider::class),
                 $app->make(GuardianProvider::class),
-            ]);
+            ],
+                $app->make(ArticleRepositoryInterface::class));
         });
-    }
-
-    /**
-     * Bootstrap services.
-     */
-    public function boot(): void
-    {
-        //
     }
 }

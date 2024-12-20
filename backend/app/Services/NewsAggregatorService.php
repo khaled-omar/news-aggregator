@@ -2,17 +2,13 @@
 
 namespace App\Services;
 
-use App\Models\Article;
+use App\Repositories\Contracts\ArticleRepositoryInterface;
+use app\Services\Contracts\NewsProviderInterface;
 use Illuminate\Support\Facades\Log;
 
 class NewsAggregatorService
 {
-    protected array $providers;
-
-    public function __construct(array $providers)
-    {
-        $this->providers = $providers;
-    }
+    public function __construct(protected array $providers, protected ArticleRepositoryInterface $articleRepository) {}
 
     /**
      * Aggregate articles from all registered providers.
@@ -23,8 +19,8 @@ class NewsAggregatorService
             try {
                 $this->processProvider($provider);
             } catch (\Exception $exception) {
-                Log::error("Failed to process provider: " . get_class($provider), [
-                  'error' => $exception->getMessage(),
+                Log::error('Failed to process provider: '.get_class($provider), [
+                    'error' => $exception->getMessage(),
                 ]);
             }
         }
@@ -32,28 +28,21 @@ class NewsAggregatorService
 
     /**
      * Process a single provider and save its articles.
-     *
-     * @param \App\Services\NewsProviderInterface $provider
      */
     protected function processProvider(NewsProviderInterface $provider): void
     {
         $articles = $provider->fetchArticles();
 
-        foreach ($articles as $article) {
-            $this->saveArticle($article);
+        if (filled($articles)) {
+            $this->saveArticles($articles);
         }
     }
 
     /**
      * Save an article to the database.
-     *
-     * @param array $article
      */
-    protected function saveArticle(array $article): void
+    protected function saveArticles(array $articles): void
     {
-        Article::query()->updateOrCreate(
-          ['url' => $article['url']], // Unique constraint
-          $article
-        );
+        $this->articleRepository->upsert($articles, ['url'], array_keys($articles[0]));
     }
 }

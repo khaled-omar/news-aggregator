@@ -1,13 +1,17 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace app\Services;
 
 use App\Exceptions\InvalidPasswordException;
 use App\Models\User;
+use App\Repositories\Contracts\UserRepositoryInterface;
 use Illuminate\Support\Facades\Hash;
 
 class UserService
 {
+
+    public function __construct(protected UserRepositoryInterface $userRepository) {}
+
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +20,7 @@ class UserService
      */
     public function doLogin(array $data): User
     {
-        $user = User::where('email', $data['email'])->first();
+        $user = $this->userRepository->findByEmail($data['email']);
 
         if ($this->isUserPasswordExists($user, $data['password'])) {
             throw new InvalidPasswordException;
@@ -29,10 +33,11 @@ class UserService
 
     public function doRegister(array $data): User
     {
-        $user = User::query()->create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+        /** @var User $user */
+        $user = $this->userRepository->create([
+          'name' => $data['name'],
+          'email' => $data['email'],
+          'password' => Hash::make($data['password']),
         ]);
 
         $user->token = $user->createToken($data['email'])->plainTextToken;
