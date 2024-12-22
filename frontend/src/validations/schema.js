@@ -10,12 +10,14 @@ export const loginSchema = yup.object().shape({
     .min(6, "Password must be at least 6 characters long")
     .required("Password is required"),
 });
-export const registerationSchema = yup
-    .object({
-        username: yup.string().required().min(5),
-        name: yup.string().required().min(5),
-        email: yup.string().required().email().min(5),
-        password: yup.string().required().min(5),
-        password_confirmation: yup.string().required().oneOf([yup.ref('password'), null], 'Passwords must match'),
-        agree_terms: yup.boolean().oneOf([true], 'You must accept the terms and conditions'),
-    }).required()
+
+export const registerSchema = yup.object().shape({
+  username: yup.string().required("Username is required").min(3, "Username must be at least 3 characters"),
+  name: yup.string().required("Name is required"),
+  email: yup.string().required("Email is required").email("Enter a valid email"),
+  password: yup.string().required("Password is required").min(8, "Password must be at least 8 characters"),
+  password_confirmation: yup
+    .string()
+    .oneOf([yup.ref("password"), null], "Passwords must match")
+    .required("Password confirmation is required"),
+});

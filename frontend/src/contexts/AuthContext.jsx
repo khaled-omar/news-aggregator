@@ -1,25 +1,45 @@
-import {createContext, useContext} from 'react';
+import { createContext, useContext, useEffect, useState } from 'react'
 import {useCookies} from "react-cookie";
 import UserService from "../services/UserService.js";
 import {getDate} from "../utils/Helpers.js";
 import Cookie from '../utils/Cookies.js';
+import { Box, CircularProgress } from '@mui/material'
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({children}) => {
-    const [cookies, setCookie] = useCookies(['user', 'access_token'])
+    const [cookies, setCookie] = useCookies(['access_token'])
+    const [currentUser, setCurrentUser] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        const initializeAuth = async () => {
+            const token = cookies.access_token;
+
+            if (!!token && !currentUser) {
+                try {
+                    const user = await UserService.me();
+                    setCurrentUser(user);
+                } catch (error) {
+                    logout();
+                }
+            }
+
+            setIsLoading(false);
+        };
+
+        initializeAuth();
+    }, [currentUser]);
+
 
     const login = async (loginData) => {
         const user = await UserService.login(loginData)
         setCookie('access_token', user?.access_token, {expires: getDate(7)})
-        setCookie('user', JSON.stringify(user), {expires: getDate(7)})
     };
 
     const registerNewUser = async (data) => {
-        const body = await UserService.register(data)
-        setCookie('access_token', body.data.access_token, {expires: getDate(7)})
-        const user = await UserService.me()
-        setCookie('user', JSON.stringify(user), {expires: getDate(7)})
+        const user = await UserService.register(data)
+        setCookie('access_token', user.access_token, {expires: getDate(7)})
     };
 
     const isAuthenticated = () => {
@@ -28,11 +48,20 @@ export const AuthProvider = ({children}) => {
 
     const logout = () => {
         Cookie.remove('access_token');
+        setCurrentUser(null);
+        // navigate('/login');
     };
+
+    if (isLoading) {
+        return <Box sx={{ display: 'flex', justifyContent: 'center'}}>
+            <CircularProgress />
+        </Box>;
+    }
 
     return (
         <AuthContext.Provider
             value={{
+                currentUser,
                 isAuthenticated,
                 login,
                 registerNewUser,

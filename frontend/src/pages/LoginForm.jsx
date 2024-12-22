@@ -8,8 +8,8 @@ import {
   InputAdornment,
   IconButton,
   Link,
-  Avatar,
-} from "@mui/material";
+  Avatar, Link as MuiLink,
+} from '@mui/material'
 import Grid from "@mui/material/Grid2";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
@@ -17,19 +17,18 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useAuthContext } from '../contexts/AuthContext.jsx'
 import { loginSchema } from '../validations/schema.js'
-
-
+import { Link as RouterLink, useNavigate } from 'react-router-dom'
 
 const LoginForm = () => {
-
   const [showPassword, setShowPassword] = useState(false);
   const {register, handleSubmit, setError, formState: {errors, isSubmitting} } = useForm({resolver: yupResolver(loginSchema) });
   const {login} = useAuthContext()
+  const navigate = useNavigate();
 
   const onSubmit = async (data) => {
     try {
       await login({'email': data.email, 'password': data.password})
-      // navigate('/')
+      navigate('/')
     } catch (e) {
       setError('email', {
         type: 'manual',
@@ -40,7 +39,7 @@ const LoginForm = () => {
 
 
   return (
-    <Container maxWidth="xs">
+    <Container maxWidth="xs" sx={{ display: "flex", justifyContent: "center" , alignItems: "center" }}>
       <Box
         sx={{
           marginTop: 8,
@@ -110,9 +109,9 @@ const LoginForm = () => {
             <Grid item>
               <Typography variant="body2">
                 Don't have an account?{" "}
-                <Link href="#" color="primary.main">
+                <MuiLink component={RouterLink} to="/register" color="primary">
                   {"Signup"}
-                </Link>
+                </MuiLink>
               </Typography>
             </Grid>
           </Grid>
