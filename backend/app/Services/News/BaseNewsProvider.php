@@ -3,6 +3,7 @@
 namespace app\Services\News;
 
 use app\Services\Contracts\NewsProviderInterface;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;
 
 abstract class BaseNewsProvider implements NewsProviderInterface
@@ -12,7 +13,7 @@ abstract class BaseNewsProvider implements NewsProviderInterface
      *
      * @throws \Exception
      */
-    public function fetchArticles(): array
+    public function fetchArticles(): Collection
     {
         $response = Http::get($this->getApiUrl(), $this->getApiParams());
 
@@ -21,8 +22,7 @@ abstract class BaseNewsProvider implements NewsProviderInterface
         }
 
         return collect($this->getArticlesFromResponse($response->json()))
-            ->map(fn ($article) => $this->mapArticle($article))
-            ->toArray();
+            ->map(fn ($article) => $this->mapArticle($article));
     }
 
     /**

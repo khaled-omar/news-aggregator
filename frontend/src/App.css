@@ -1,7 +1,10 @@
-
-
-
-#root {
-
+body{
+  margin: 0;
+  padding: 0;
 }
 
+
+.css-1yo1fu-MuiStack-root>.MuiTextField-root,
+.css-1yo1fu-MuiStack-root>.MuiPickersTextField-root {
+  min-width: 0 !important; /* Remove min-width */
+}

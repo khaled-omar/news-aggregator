@@ -15,7 +15,7 @@ class ArticleController extends Controller
      */
     public function index(ListArticleRequest $request)
     {
-        $items = $this->articleRepository->simplePaginate();
+        $items = $this->articleRepository->paginate();
 
         return ArticleResource::collection($items);
     }

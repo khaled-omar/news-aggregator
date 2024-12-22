@@ -10,7 +10,7 @@ import '@fontsource/roboto/500.css'
 import '@fontsource/roboto/700.css'
 import { AuthProvider } from './contexts/AuthContext.jsx'
 import { RouterProvider } from 'react-router-dom'
-import Home from './Home.jsx'
+import Home from './pages/Home.jsx'
 
 createRoot(document.getElementById('root')).render(<StrictMode>
   <ThemeProvider theme={theme}>

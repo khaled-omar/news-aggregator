@@ -5,20 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1a37e4b-e1db-4ed1-9c8f-2c20d2239742" name="Changes" comment="Add Repository layer">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/routes/AuthRoute.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/routes/ProtectedRoute.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/routes/authRoutes.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/routes/newsRoutes.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/routes/router.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/Filters.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/LatestArticles.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/LoadingIndicator.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/layout/Header.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/services/ArticleService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/ArticleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Repositories/BaseRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Repositories/BaseRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Repositories/Contracts/BaseRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Repositories/Contracts/BaseRepositoryInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Services/Contracts/NewsProviderInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Services/Contracts/NewsProviderInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Services/News/BaseNewsProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Services/News/BaseNewsProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Services/NewsAggregatorService.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Services/NewsAggregatorService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Home.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/contexts/AuthContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/contexts/AuthContext.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/LoginForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/LoginForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/RegisterForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/RegisterForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/validations/schema.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/validations/schema.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/routes/newsRoutes.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/routes/newsRoutes.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,8 +37,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JSX File" />
         <option value="JavaScript File" />
+        <option value="JSX File" />
       </list>
     </option>
   </component>
@@ -283,7 +288,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;com.codeium.enabled&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/media/khaled/20986F6E986F41801/Work/Projects/news-app/frontend/src/routes&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/media/khaled/20986F6E986F41801/Work/Projects/news-app/frontend/src/services&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -297,10 +302,14 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/src/services" />
       <recent name="$PROJECT_DIR$/frontend/src/routes" />
       <recent name="$PROJECT_DIR$/frontend/src" />
       <recent name="$PROJECT_DIR$/frontend/src/utils" />
       <recent name="$PROJECT_DIR$/frontend" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/src/components" />
       <recent name="$PROJECT_DIR$/frontend/src/pages" />
     </key>
   </component>
@@ -330,7 +339,9 @@
       <workItem from="1734711970634" duration="20393000" />
       <workItem from="1734820861105" duration="261000" />
       <workItem from="1734821219986" duration="2998000" />
-      <workItem from="1734882273927" duration="348000" />
+      <workItem from="1734882273927" duration="988000" />
+      <workItem from="1734883309985" duration="4475000" />
+      <workItem from="1734887804282" duration="15731000" />
     </task>
     <servers />
   </component>
@@ -343,5 +354,20 @@
     </ignored-roots>
     <MESSAGE value="Add Repository layer" />
     <option name="LAST_COMMIT_MESSAGE" value="Add Repository layer" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php-line-method">
+          <url>file://$PROJECT_DIR$/backend/app/Services/News/BaseNewsProvider.php</url>
+          <line>40</line>
+          <properties>
+            <option name="className" value="\app\Services\News\BaseNewsProvider" />
+            <option name="methodName" value="mapArticle" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

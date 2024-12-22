@@ -1,4 +1,4 @@
-import Home from '../Home.jsx'
+import Home from '../pages/Home.jsx'
 import ProtectedRoute from './ProtectedRoute.js'
 
 export const newsRoutes = [

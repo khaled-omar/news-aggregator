@@ -2,6 +2,7 @@
 
 namespace App\Repositories\Contracts;
 
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Collection;
 
@@ -9,7 +10,7 @@ interface BaseRepositoryInterface
 {
     public function all(): Collection;
 
-    public function simplePaginate(): Paginator;
+    public function paginate(): LengthAwarePaginator;
 
     public function find(int $id): ?object;
 

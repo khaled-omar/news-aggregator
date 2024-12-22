@@ -3,7 +3,7 @@ import {useCookies} from "react-cookie";
 import UserService from "../services/UserService.js";
 import {getDate} from "../utils/Helpers.js";
 import Cookie from '../utils/Cookies.js';
-import { Box, CircularProgress } from '@mui/material'
+import LoadingIndicator from '../components/LoadingIndicator.jsx'
 
 export const AuthContext = createContext();
 
@@ -49,13 +49,10 @@ export const AuthProvider = ({children}) => {
     const logout = () => {
         Cookie.remove('access_token');
         setCurrentUser(null);
-        // navigate('/login');
     };
 
     if (isLoading) {
-        return <Box sx={{ display: 'flex', justifyContent: 'center'}}>
-            <CircularProgress />
-        </Box>;
+        return <><LoadingIndicator /></>;
     }
 
     return (
