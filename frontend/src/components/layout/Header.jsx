@@ -35,7 +35,7 @@ const Header = () => {
           sx={{ bgcolor: 'white', borderRadius: 1, mr: 2, flex: 1 }}
           // onChange={aaa(e) => onSearch(e.target.value)}
         />
-        {isAuthenticated ? (
+        {isAuthenticated() ? (
           <>
             <MuiLink component={RouterLink} to="/profile" underline="none" color="inherit" sx={{ mr: 2 }}>
               Profile

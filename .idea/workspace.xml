@@ -5,25 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1a37e4b-e1db-4ed1-9c8f-2c20d2239742" name="Changes" comment="Add Repository layer">
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Filters.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/LatestArticles.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/LoadingIndicator.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/layout/Header.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/services/ArticleService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/ArticleController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/Repositories/BaseRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Repositories/BaseRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Repositories/Contracts/BaseRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Repositories/Contracts/BaseRepositoryInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Services/Contracts/NewsProviderInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Services/Contracts/NewsProviderInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Services/News/BaseNewsProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Services/News/BaseNewsProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Services/NewsAggregatorService.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Services/NewsAggregatorService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/contexts/AuthContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/contexts/AuthContext.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/routes/newsRoutes.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/routes/newsRoutes.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/LatestArticles.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LatestArticles.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/layout/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/layout/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/ArticleService.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/ArticleService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -341,7 +328,7 @@
       <workItem from="1734821219986" duration="2998000" />
       <workItem from="1734882273927" duration="988000" />
       <workItem from="1734883309985" duration="4475000" />
-      <workItem from="1734887804282" duration="15731000" />
+      <workItem from="1734887804282" duration="18864000" />
     </task>
     <servers />
   </component>

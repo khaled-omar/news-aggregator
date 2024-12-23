@@ -24,7 +24,7 @@ abstract class BaseRepository implements BaseRepositoryInterface
 
     public function paginate(): LengthAwarePaginator
     {
-        return $this->model->paginate();
+        return $this->model->paginate(request('limit',9));
     }
 
     public function find(int $id): ?object

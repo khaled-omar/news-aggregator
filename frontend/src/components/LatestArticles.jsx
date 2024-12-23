@@ -16,6 +16,8 @@ import LoadingIndicator from "./LoadingIndicator.jsx";
 import { useSearchParams } from "react-router-dom";
 import dayjs from "dayjs";
 
+const LIMIT = 9;
+
 const LatestArticles = () => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -24,9 +26,9 @@ const LatestArticles = () => {
 
   const currentPage = parseInt(searchParams.get("page") || "1", 10);
 
-  const fetchArticles = async (page = 1, filters= {}) => {
+  const fetchArticles = async (page = 1) => {
     try {
-      const data = await ArticleService.all({ ...filters, page:page });
+      const data = await ArticleService.findAll({ page: page, limit: LIMIT});
       setArticles(data.data);
       setTotalPages(data.meta.last_page);
     } catch (error) {
@@ -38,18 +40,18 @@ const LatestArticles = () => {
 
   useEffect(() => {
     const filters = [];
+    //
+    // for(let entry of searchParams.entries()) {
+    //   if (entry[0] === "page") continue;
+    //   let key = entry[0];
+    //   let value = entry[1];
+    //   console.log(key)
+    //   filters.push({
+    //     [key]: value
+    //   });
+    // }
 
-    for(let entry of searchParams.entries()) {
-      if (entry[0] === "page") continue;
-      let key = entry[0];
-      let value = entry[1];
-      console.log(key)
-      filters.push({
-        [key]: value
-      });
-    }
-
-    fetchArticles(currentPage, filters);
+    fetchArticles(currentPage);
   }, [currentPage, searchParams]);
 
   const handlePageChange = (event, value) => {
