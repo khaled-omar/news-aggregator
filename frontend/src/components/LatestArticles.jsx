@@ -26,9 +26,32 @@ const LatestArticles = () => {
 
   const currentPage = parseInt(searchParams.get("page") || "1", 10);
 
-  const fetchArticles = async (page = 1) => {
+  function buildFilters() {
+    const filters = {
+      page: currentPage,
+      limit: LIMIT,
+    }
+
+    for (let [key, value] of searchParams.entries()) {
+      if (key.endsWith('[]')) {
+        const actualKey = key.slice(0, -2)
+        if (!filters[actualKey]) {
+          filters[actualKey] = []
+        }
+        filters[actualKey].push(value)
+      } else {
+        filters[key] = value
+      }
+    }
+
+    return filters
+  }
+
+  const fetchArticles = async () => {
     try {
-      const data = await ArticleService.findAll({ page: page, limit: LIMIT});
+      setLoading(true);
+      const filters = buildFilters()
+      const data = await ArticleService.findAll(filters);
       setArticles(data.data);
       setTotalPages(data.meta.last_page);
     } catch (error) {
@@ -39,19 +62,7 @@ const LatestArticles = () => {
   };
 
   useEffect(() => {
-    const filters = [];
-    //
-    // for(let entry of searchParams.entries()) {
-    //   if (entry[0] === "page") continue;
-    //   let key = entry[0];
-    //   let value = entry[1];
-    //   console.log(key)
-    //   filters.push({
-    //     [key]: value
-    //   });
-    // }
-
-    fetchArticles(currentPage);
+    fetchArticles();
   }, [currentPage, searchParams]);
 
   const handlePageChange = (event, value) => {

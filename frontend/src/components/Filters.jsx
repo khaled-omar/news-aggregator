@@ -42,6 +42,7 @@ const Filters = () => {
     else {
       searchParams.delete(key);
     }
+    searchParams.set('page', '1');
     setSearchParams(searchParams);
   };
 
@@ -117,8 +118,8 @@ const Filters = () => {
           control={
             <Checkbox
               size="small"
-              checked={selectedSources.includes('new_york_times')}
-              onChange={() => handleCheckboxChange('new_york_times')}
+              checked={selectedSources.includes('ny_times')}
+              onChange={() => handleCheckboxChange('ny_times')}
             />
           }
           label="New York Times"
@@ -127,8 +128,8 @@ const Filters = () => {
           control={
             <Checkbox
               size="small"
-              checked={selectedSources.includes('guardians')}
-              onChange={() => handleCheckboxChange('guardians')}
+              checked={selectedSources.includes('guardian')}
+              onChange={() => handleCheckboxChange('guardian')}
             />
           }
           label="Guardians"

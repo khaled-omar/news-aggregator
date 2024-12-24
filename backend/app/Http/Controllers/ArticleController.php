@@ -15,7 +15,9 @@ class ArticleController extends Controller
      */
     public function index(ListArticleRequest $request)
     {
-        $items = $this->articleRepository->paginate();
+        $filters = $request->validated();
+
+        $items = $this->articleRepository->paginate($filters);
 
         return ArticleResource::collection($items);
     }
