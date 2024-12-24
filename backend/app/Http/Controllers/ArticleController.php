@@ -5,10 +5,11 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ListArticleRequest;
 use App\Http\Resources\ArticleResource;
 use App\Repositories\Contracts\ArticleRepositoryInterface;
+use App\Services\ArticleService;
 
 class ArticleController extends Controller
 {
-    public function __construct(protected ArticleRepositoryInterface $articleRepository) {}
+    public function __construct(protected ArticleRepositoryInterface $articleRepository, protected ArticleService $articleService) {}
 
     /**
      * Display a listing of the resource.
@@ -17,7 +18,7 @@ class ArticleController extends Controller
     {
         $filters = $request->validated();
 
-        $items = $this->articleRepository->paginate($filters);
+        $items = $this->articleService->getPersonalizedArticles($filters);
 
         return ArticleResource::collection($items);
     }

@@ -6,6 +6,7 @@ use App\Models\Article;
 use App\Repositories\Contracts\ArticleRepositoryInterface;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Pagination\LengthAwarePaginator;
+
 class ArticleRepository extends BaseRepository implements ArticleRepositoryInterface
 {
     use ArticleRepoFilters;
@@ -31,7 +32,8 @@ class ArticleRepository extends BaseRepository implements ArticleRepositoryInter
         return $query->paginate($limit);
     }
 
-    protected function handleQueryFilters(array $filters, Builder $query): void {
+    protected function handleQueryFilters(array $filters, Builder $query): void
+    {
         $this->filterBySource($filters, $query);
         $this->filterByKeyword($filters, $query);
         $this->filterByPublishDate($filters, $query);

@@ -6,7 +6,6 @@ use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
 use App\Http\Resources\UserResource;
 use app\Services\UserService;
-use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
@@ -32,23 +31,5 @@ class AuthController extends Controller
         $user = $this->userService->doRegister($request->validated());
 
         return new UserResource($user);
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function me()
-    {
-        $user = auth()->user();
-
-        return new UserResource($user);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        // @TODO:: Implement this
     }
 }

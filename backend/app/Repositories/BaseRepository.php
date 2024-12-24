@@ -5,7 +5,6 @@ namespace App\Repositories;
 use App\Repositories\Contracts\BaseRepositoryInterface;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pagination\LengthAwarePaginator;
-use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Collection;
 
 abstract class BaseRepository implements BaseRepositoryInterface
@@ -24,7 +23,7 @@ abstract class BaseRepository implements BaseRepositoryInterface
 
     public function paginate(): LengthAwarePaginator
     {
-        return $this->model->paginate(request('limit',9));
+        return $this->model->paginate(request('limit', 9));
     }
 
     public function find(int $id): ?object
@@ -44,10 +43,7 @@ abstract class BaseRepository implements BaseRepositoryInterface
 
     public function update(int $id, array $data): bool
     {
-        $record = $this->find($id);
-        if (! $record) {
-            return false;
-        }
+        $record = $this->findOrFail($id);
 
         return $record->update($data);
     }

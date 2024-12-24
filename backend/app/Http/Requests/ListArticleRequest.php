@@ -24,20 +24,20 @@ class ListArticleRequest extends FormRequest
     public function rules(): array
     {
         return [
-          'source' => ['array'],
-          'source.*' => ['string', Rule::in(array_column(NewsArticleSources::cases(), 'value'))],
-          'keyword' => ['nullable', 'string'],
-          'publish_date' => ['nullable', 'date'],
-          'page' => ['nullable', 'integer', 'min:1'],
-          'limit' => ['nullable', 'integer', 'min:1', 'max:100'],
+            'source' => ['array'],
+            'source.*' => ['string', Rule::in(array_column(NewsArticleSources::cases(), 'value'))],
+            'keyword' => ['nullable', 'string'],
+            'publish_date' => ['nullable', 'date'],
+            'page' => ['nullable', 'integer', 'min:1'],
+            'limit' => ['nullable', 'integer', 'min:1', 'max:100'],
         ];
     }
 
     public function messages(): array
     {
         return [
-          'source.*.exists' => 'One or more sources are invalid.',
-          'limit.max' => 'You cannot request more than 100 articles per page.',
+            'source.*.exists' => 'One or more sources are invalid.',
+            'limit.max' => 'You cannot request more than 100 articles per page.',
         ];
     }
 }

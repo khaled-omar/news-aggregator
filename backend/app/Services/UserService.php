@@ -5,11 +5,13 @@ namespace app\Services;
 use App\Exceptions\InvalidPasswordException;
 use App\Models\User;
 use App\Repositories\Contracts\UserRepositoryInterface;
+use App\Repositories\UserPreferencesRepository;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class UserService
 {
-    public function __construct(protected UserRepositoryInterface $userRepository) {}
+    public function __construct(protected UserRepositoryInterface $userRepository, protected UserPreferencesRepository $preferencesRepository) {}
 
     /**
      * Display a listing of the resource.
@@ -42,6 +44,25 @@ class UserService
         $user->token = $user->createToken($data['email'])->plainTextToken;
 
         return $user;
+    }
+
+    /**
+     * Update the authenticated user's profile.
+     */
+    public function updateProfile(array $data): bool
+    {
+        $userId = Auth::id();
+
+        return $this->userRepository->update($userId, $data);
+    }
+
+    /**
+     * Update the authenticated user's search preferences.
+     */
+    public function updateSearchPreferences(array $preferences): void
+    {
+        $userId = Auth::id();
+        $this->preferencesRepository->updatePreferences($userId, $preferences);
     }
 
     protected function isUserPasswordExists($user, $password): bool

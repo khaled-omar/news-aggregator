@@ -34,7 +34,7 @@ class NewsAggregatorService
         $articles = $provider->fetchArticles();
         // Ignore articles without title or content or with [Removed] title
         // These are usually articles that have been removed from the source
-        $articles = $articles->filter(fn($article) => filled($article['title']) && filled($article['content']) && $article['content'] != '[Removed]');
+        $articles = $articles->filter(fn ($article) => filled($article['title']) && filled($article['content']) && $article['content'] != '[Removed]');
 
         if (filled($articles)) {
             $this->saveArticles($articles->toArray());

@@ -16,12 +16,12 @@ class ArticleFactory extends Factory
     public function definition()
     {
         return [
-          'title' => $this->faker->sentence,
-          'content' => $this->faker->paragraph,
-          'source' => NewsArticleSources::NEWS_API,
-          'published_at' => $this->faker->dateTime,
-          'url' => $this->faker->url,
-          'image_url' => $this->faker->imageUrl,
+            'title' => $this->faker->sentence,
+            'content' => $this->faker->paragraph,
+            'source' => NewsArticleSources::NEWS_API,
+            'published_at' => $this->faker->dateTime,
+            'url' => $this->faker->url,
+            'image_url' => $this->faker->imageUrl,
         ];
     }
 }

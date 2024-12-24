@@ -2,7 +2,6 @@
 
 namespace tests\Feature;
 
-use App\Models\Article;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -28,25 +27,23 @@ class AuthControllerTest extends TestCase
 
         $data['password_confirmation'] = $data['password'];
 
-
         $response = $this->postJson(route('user.register'), $data);
 
-
         $response->assertSuccessful()
-                 ->assertJsonStructure([
-                   'data' => [
-                     'id',
-                     'name',
-                     'email',
-                     'created_at',
-                     'updated_at',
-                     'access_token',
-                   ]
-                 ])
-                 ->assertJsonFragment([
-                   'name' => $data['name'],
-                   'email' => $data['email'],
-                 ]);
+            ->assertJsonStructure([
+                'data' => [
+                    'id',
+                    'name',
+                    'email',
+                    'created_at',
+                    'updated_at',
+                    'access_token',
+                ],
+            ])
+            ->assertJsonFragment([
+                'name' => $data['name'],
+                'email' => $data['email'],
+            ]);
     }
 
     /**
@@ -64,51 +61,20 @@ class AuthControllerTest extends TestCase
 
         $response = $this->postJson(route('user.login'), $data);
 
-
-
         $response->assertSuccessful()
-                 ->assertJsonStructure([
-                   'data' => [
-                     'id',
-                     'name',
-                     'email',
-                     'created_at',
-                     'updated_at',
-                     'access_token',
-                   ]
-                 ])
-                 ->assertJsonFragment([
-                   'name' => $user->name,
-                   'email' => $data['email'],
-                 ]);
-    }
-
-
-    /**
-     * Test the user can use me endpoint to get logged in user.
-     *
-     * @return void
-     */
-    public function test_user_can_use_me_endpoint()
-    {
-        $user = User::factory()->create();
-
-        $response = $this->actingAs($user)->getJson(route('user.me'));
-
-        $response->assertSuccessful()
-                 ->assertJsonStructure([
-                   'data' => [
-                     'id',
-                     'name',
-                     'email',
-                     'created_at',
-                     'updated_at',
-                     'access_token',
-                   ]
-                 ])
-                 ->assertJsonFragment([
-                   'name' => $user->name,
-                   'email' => $user->email,
-                 ]);
+            ->assertJsonStructure([
+                'data' => [
+                    'id',
+                    'name',
+                    'email',
+                    'created_at',
+                    'updated_at',
+                    'access_token',
+                ],
+            ])
+            ->assertJsonFragment([
+                'name' => $user->name,
+                'email' => $data['email'],
+            ]);
     }
 }

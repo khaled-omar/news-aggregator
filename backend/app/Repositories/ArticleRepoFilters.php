@@ -2,7 +2,7 @@
 
 namespace App\Repositories;
 
-use \Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Builder;
 
 trait ArticleRepoFilters
 {
@@ -13,22 +13,21 @@ trait ArticleRepoFilters
         }
     }
 
-
     protected function filterByKeyword(array $filters, Builder $query): void
     {
         if (isset($filters['keyword']) && filled($filters['keyword'])) {
             $query->where(function ($q) use ($filters) {
                 $q->where('title', 'LIKE', "%{$filters['keyword']}%")
-                  ->orWhere('content', 'LIKE', "%{$filters['keyword']}%");
+                    ->orWhere('content', 'LIKE', "%{$filters['keyword']}%");
             });
         }
 
     }
 
-    protected function filterByPublishDate(array $filters, Builder $query ): void {
+    protected function filterByPublishDate(array $filters, Builder $query): void
+    {
         if (isset($filters['publish_date']) && filled($filters['publish_date'])) {
             $query->whereDate('published_at', '=', $filters['publish_date']);
         }
     }
-
 }

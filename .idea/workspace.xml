@@ -5,13 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1a37e4b-e1db-4ed1-9c8f-2c20d2239742" name="Changes" comment="Add Repository layer">
-      <change afterPath="$PROJECT_DIR$/backend/app/Repositories/ArticleRepoFilters.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/UserPreferencesController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/Http/Requests/UpdateUserProfileRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/Repositories/UserPreferencesRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/Services/ArticleService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/tests/Feature/UserControllerTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.phpunit.result.cache" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.phpunit.result.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/ArticleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Requests/ListArticleRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Requests/ListArticleRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Repositories/ArticleRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Repositories/ArticleRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Filters.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Filters.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/LatestArticles.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LatestArticles.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Repositories/BaseRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Repositories/BaseRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Repositories/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Repositories/UserRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Services/UserService.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Services/UserService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/tests/Feature/ArticleControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/tests/Feature/ArticleControllerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/tests/Feature/AuthControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/tests/Feature/AuthControllerTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/services/ArticleService.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/ArticleService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -332,6 +340,7 @@
       <workItem from="1734883309985" duration="4475000" />
       <workItem from="1734887804282" duration="19216000" />
       <workItem from="1734986173159" duration="3449000" />
+      <workItem from="1735050717409" duration="3761000" />
     </task>
     <servers />
   </component>
@@ -356,6 +365,11 @@
             <option name="methodName" value="mapArticle" />
           </properties>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/backend/app/Repositories/Contracts/BaseRepositoryInterface.php</url>
+          <line>20</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

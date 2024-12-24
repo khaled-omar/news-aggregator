@@ -14,8 +14,7 @@ class ArticleService {
     }
 
     const endpoint = `/articles?${params.toString()}`;
-    console.log("Constructed URL:", endpoint);
-
+    console.log("Constructed URL:", endpoint
     return await HttpClient.get(endpoint).then((response) => response.data);
   }
 }
