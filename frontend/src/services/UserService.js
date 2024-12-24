@@ -12,6 +12,14 @@ class UserService {
     static async me() {
         return await HttpClient.get('/auth/me').then((response) => response.data.data)
     }
+
+    static async updateProfile(data) {
+        return await HttpClient.put('/auth/user/profile', data).then((response) => response.data);
+    }
+
+    static async updatePreferences(data) {
+        return await HttpClient.put('/auth/user/preferences', data).then((response) => response.data);
+    }
 }
 
 export default UserService

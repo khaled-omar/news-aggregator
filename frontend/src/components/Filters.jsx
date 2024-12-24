@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react'
 import {
   Box,
   Checkbox,
@@ -19,13 +19,16 @@ const Filters = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const [keyword, setKeyword] = useState(searchParams.get('keyword') || '');
-
   const [selectedSources, setSelectedSources] = useState(searchParams.getAll('source[]') || []);
 
 
   const [publishDate, setPublishDate] = useState(
     searchParams.get('publish_date') ? dayjs(searchParams.get('publish_date')) : null
   );
+
+  useEffect(() => {
+    setKeyword(searchParams.get('keyword') || '');
+  }, [searchParams]);
 
   const updateSearchParams = (key, value) => {
     if (value) {
@@ -72,11 +75,16 @@ const Filters = () => {
         <TextField
           size="small"
           value={keyword}
+          onKeyUp={(e) => {
+            if (e.key === 'Enter') {
+              updateSearchParams('keyword', e.target.value.trim())
+            }
+          }}
+
           onChange={(e) => {
             setKeyword(e.target.value);
-            updateSearchParams('keyword', e.target.value.trim())
           }}
-          placeholder="Enter any keyword"
+          placeholder="Enter keyword"
         />
       </FormGroup>
 

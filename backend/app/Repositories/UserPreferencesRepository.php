@@ -16,7 +16,7 @@ class UserPreferencesRepository extends BaseRepository
      */
     public function updatePreferences(int $userId, array $preferences): UserPreference
     {
-        return $this->updateOrCreate(['user_id' => $userId], ['preferences' => json_encode($preferences)]);
+        return $this->updateOrCreate(['user_id' => $userId], ['preferences' => $preferences]);
     }
 
     /**

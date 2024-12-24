@@ -1,10 +1,10 @@
 import {createBrowserRouter} from "react-router-dom";
 import {authRoutes} from "./authRoutes";
-import {newsRoutes} from "./newsRoutes.jsx";
+import {routes} from "./routes.jsx";
 
 const router = createBrowserRouter([
     ...authRoutes,
-    ...newsRoutes
+    ...routes
 ]);
 
 export default router

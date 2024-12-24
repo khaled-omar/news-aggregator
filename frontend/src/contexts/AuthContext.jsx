@@ -1,9 +1,9 @@
-import { createContext, useContext, useEffect, useState } from 'react'
+import React, { createContext, useContext, useEffect, useState } from 'react'
 import {useCookies} from "react-cookie";
 import UserService from "../services/UserService.js";
 import {getDate} from "../utils/Helpers.js";
 import Cookie from '../utils/Cookies.js';
-import LoadingIndicator from '../components/LoadingIndicator.jsx'
+import FullPageLoader from '../components/FullPageLoader.jsx'
 
 export const AuthContext = createContext();
 
@@ -52,13 +52,14 @@ export const AuthProvider = ({children}) => {
     };
 
     if (isLoading) {
-        return <><LoadingIndicator /></>;
+        return  <FullPageLoader/>
     }
 
     return (
         <AuthContext.Provider
             value={{
                 currentUser,
+                setCurrentUser,
                 isAuthenticated,
                 login,
                 registerNewUser,

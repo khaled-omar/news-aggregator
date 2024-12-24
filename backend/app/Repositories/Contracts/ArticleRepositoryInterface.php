@@ -2,7 +2,9 @@
 
 namespace App\Repositories\Contracts;
 
+use Illuminate\Pagination\LengthAwarePaginator;
+
 interface ArticleRepositoryInterface extends BaseRepositoryInterface
 {
-    public function findByUrl(string $url): ?object;
+    public function getLatestArticles(array $filters = []): LengthAwarePaginator;
 }

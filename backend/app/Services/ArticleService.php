@@ -18,7 +18,7 @@ class ArticleService
     {
         // Determine if custom filters are applied (excluding pagination parameters)
         if ($this->hasCustomFilters($filters)) {
-            return $this->articleRepository->paginate($filters);
+            return $this->articleRepository->getLatestArticles($filters);
         }
 
         // Apply user personalization if no custom filters are provided
@@ -28,7 +28,7 @@ class ArticleService
             $filters['source'] = $userPreferences['news_sources'] ?? [];
         }
 
-        return $this->articleRepository->paginate($filters);
+        return $this->articleRepository->getLatestArticles($filters);
     }
 
     /**

@@ -4,7 +4,6 @@ namespace App\Repositories;
 
 use App\Models\Article;
 use App\Repositories\Contracts\ArticleRepositoryInterface;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Pagination\LengthAwarePaginator;
 
 class ArticleRepository extends BaseRepository implements ArticleRepositoryInterface
@@ -16,12 +15,7 @@ class ArticleRepository extends BaseRepository implements ArticleRepositoryInter
         parent::__construct($article);
     }
 
-    public function findByUrl(string $url): ?object
-    {
-        return $this->model->where('url', $url)->first();
-    }
-
-    public function paginate(array $filters = []): LengthAwarePaginator
+    public function getLatestArticles(array $filters = []): LengthAwarePaginator
     {
         $query = $this->model->query();
 
@@ -29,13 +23,10 @@ class ArticleRepository extends BaseRepository implements ArticleRepositoryInter
 
         $limit = $filters['limit'] ?? 9;
 
+        $query->orderByDesc('published_at');
+
         return $query->paginate($limit);
     }
 
-    protected function handleQueryFilters(array $filters, Builder $query): void
-    {
-        $this->filterBySource($filters, $query);
-        $this->filterByKeyword($filters, $query);
-        $this->filterByPublishDate($filters, $query);
-    }
+
 }

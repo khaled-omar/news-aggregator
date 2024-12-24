@@ -26,7 +26,7 @@ class ListArticleRequest extends FormRequest
         return [
             'source' => ['array'],
             'source.*' => ['string', Rule::in(array_column(NewsArticleSources::cases(), 'value'))],
-            'keyword' => ['nullable', 'string'],
+            'keyword' => ['nullable', 'string', 'max:100'],
             'publish_date' => ['nullable', 'date'],
             'page' => ['nullable', 'integer', 'min:1'],
             'limit' => ['nullable', 'integer', 'min:1', 'max:100'],

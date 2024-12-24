@@ -5,22 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1a37e4b-e1db-4ed1-9c8f-2c20d2239742" name="Changes" comment="Add Repository layer">
-      <change afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/UserPreferencesController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Http/Requests/UpdateUserProfileRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Repositories/UserPreferencesRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Services/ArticleService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/tests/Feature/UserControllerTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/FullPageLoader.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/UserPreferences.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/UserProfileUpdate.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/ErrorPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/ProfilePage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/routes/routes.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/.phpunit.result.cache" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.phpunit.result.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/ArticleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Repositories/BaseRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Repositories/BaseRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Repositories/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Repositories/UserRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Services/UserService.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Services/UserService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/tests/Feature/ArticleControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/tests/Feature/ArticleControllerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/tests/Feature/AuthControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/tests/Feature/AuthControllerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Requests/ListArticleRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Requests/ListArticleRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Resources/UserResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Resources/UserResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Repositories/ArticleRepoFilters.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Repositories/ArticleRepoFilters.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Repositories/ArticleRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Repositories/ArticleRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Repositories/Contracts/ArticleRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Repositories/Contracts/ArticleRepositoryInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Repositories/UserPreferencesRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Repositories/UserPreferencesRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Services/ArticleService.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Services/ArticleService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Filters.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Filters.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/LatestArticles.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LatestArticles.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/LoadingIndicator.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LoadingIndicator.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/layout/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/layout/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/contexts/AuthContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/contexts/AuthContext.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/routes/authRoutes.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/routes/authRoutes.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/routes/newsRoutes.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/routes/router.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/routes/router.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/services/ArticleService.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/ArticleService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/UserService.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/UserService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/validations/schema.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/validations/schema.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +53,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/backend/package.json" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.4">
     <include_path>
@@ -306,8 +321,8 @@
       <recent name="$PROJECT_DIR$/frontend" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/frontend/src/components" />
       <recent name="$PROJECT_DIR$/frontend/src/pages" />
+      <recent name="$PROJECT_DIR$/frontend/src/components" />
     </key>
   </component>
   <component name="RunManager">
@@ -340,7 +355,8 @@
       <workItem from="1734883309985" duration="4475000" />
       <workItem from="1734887804282" duration="19216000" />
       <workItem from="1734986173159" duration="3449000" />
-      <workItem from="1735050717409" duration="3761000" />
+      <workItem from="1735050717409" duration="4150000" />
+      <workItem from="1735066608789" duration="13996000" />
     </task>
     <servers />
   </component>
@@ -368,7 +384,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/backend/app/Repositories/Contracts/BaseRepositoryInterface.php</url>
-          <line>20</line>
+          <line>19</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

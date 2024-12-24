@@ -10,5 +10,6 @@ export const authRoutes = [
     {
         path: "/login",
         element: <AuthRoute><LoginForm/></AuthRoute>,
-    }
+    },
+
 ]

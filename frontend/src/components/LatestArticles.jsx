@@ -8,7 +8,7 @@ import {
   Button,
   Container,
   Stack,
-  Pagination, Box,
+  Pagination, Box, Alert, Backdrop, CircularProgress,
 } from '@mui/material'
 import Grid from "@mui/material/Grid2";
 import ArticleService from "../services/ArticleService.js";
@@ -21,6 +21,7 @@ const LIMIT = 9;
 const LatestArticles = () => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [totalPages, setTotalPages] = useState(1);
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -50,12 +51,13 @@ const LatestArticles = () => {
   const fetchArticles = async () => {
     try {
       setLoading(true);
+      setError(null);
       const filters = buildFilters()
       const data = await ArticleService.findAll(filters);
       setArticles(data.data);
       setTotalPages(data.meta.last_page);
-    } catch (error) {
-      console.error("Error fetching articles:", error);
+    } catch (e) {
+      setError('Failed to fetch articles. Please try again later.');
     } finally {
       setLoading(false);
     }
@@ -71,7 +73,7 @@ const LatestArticles = () => {
   };
 
   if (loading) {
-    return <LoadingIndicator />;
+    return <LoadingIndicator />
   }
 
 
@@ -80,13 +82,19 @@ const LatestArticles = () => {
       <Typography variant="h4" align="center"  sx={{ my: 4 }}>
         Latest Articles
       </Typography>
-      { articles.length === 0 && <Box>
-        <Typography variant="h6" align="center" gutterBottom>
-          No articles found
+      {error && <Alert severity="error">{error}</Alert>}
+      { !error && articles.length === 0 && <Box>
+          <Typography variant="body2" align="center" color="text.secondary" sx={{ display: "block", my: 2 }}>
+          The are no results found matching your search criteria
         </Typography>
       </Box>}
       { articles.length > 0 && <Box>
+        <Typography variant="caption" color="text.secondary" sx={{ display: "block", my: 2 }}>
+          {`Showing ${articles.length} of ${totalPages * LIMIT} articles`}
+        </Typography>
+
       <Grid container spacing={4} >
+
         {articles?.map((article) => (
           <Grid size={{sm: 12,md:6, lg: 4 }} key={article.id}>
             <Card sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
@@ -106,11 +114,6 @@ const LatestArticles = () => {
                     {dayjs(article.published_at).format("MMMM DD, YYYY")}
                   </Typography>
                 )}
-
-                {/*<Typography variant="body2" color="text.secondary" sx={{ display: "block", mt: 2 }}>*/}
-                {/*  {article.content || "No content available"}*/}
-                {/*</Typography>*/}
-
               </CardContent>
               <CardActions sx={{ mt: "auto", display: "flex", justifyContent: "flex-end" }}>
                 <Button size="small" href={article.url} target="_blank">

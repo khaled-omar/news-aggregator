@@ -6,6 +6,13 @@ use Illuminate\Database\Eloquent\Builder;
 
 trait ArticleRepoFilters
 {
+    protected function handleQueryFilters(array $filters, Builder $query): void
+    {
+        $this->filterBySource($filters, $query);
+        $this->filterByKeyword($filters, $query);
+        $this->filterByPublishDate($filters, $query);
+    }
+
     protected function filterBySource(array $filters, Builder $query): void
     {
         if (isset($filters['source']) && filled($filters['source'])) {
@@ -18,10 +25,9 @@ trait ArticleRepoFilters
         if (isset($filters['keyword']) && filled($filters['keyword'])) {
             $query->where(function ($q) use ($filters) {
                 $q->where('title', 'LIKE', "%{$filters['keyword']}%")
-                    ->orWhere('content', 'LIKE', "%{$filters['keyword']}%");
+                  ->orWhere('content', 'LIKE', "%{$filters['keyword']}%");
             });
         }
-
     }
 
     protected function filterByPublishDate(array $filters, Builder $query): void
