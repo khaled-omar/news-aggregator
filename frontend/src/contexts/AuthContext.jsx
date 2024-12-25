@@ -34,11 +34,13 @@ export const AuthProvider = ({children}) => {
 
     const login = async (loginData) => {
         const user = await UserService.login(loginData)
+        setCurrentUser(user);
         setCookie('access_token', user?.access_token, {expires: getDate(7)})
     };
 
     const registerNewUser = async (data) => {
         const user = await UserService.register(data)
+        setCurrentUser(user);
         setCookie('access_token', user.access_token, {expires: getDate(7)})
     };
 
