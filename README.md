@@ -7,7 +7,7 @@ To install project on your local machine, run the following commands:-
 2. Install dependencies using `sh setup.sh`
 3. Change directory to the backend `cd backend`
 4. Run & Build docker-compose services: `./vendor/bin/sail up --build`
-5. Run migrations `./vendor/bin/sail migrate`
+5. Run migrations `./vendor/bin/sail artisan migrate`
 6. In order to scrapp articles from news sources run the following command `./vendor/bin/sail artisan news:aggregate`
 7. Go to Backend => [Localhost:80](http://localhost:80/)
 8. Go to Frontend => [Localhost:5173](http://localhost:5173/)
