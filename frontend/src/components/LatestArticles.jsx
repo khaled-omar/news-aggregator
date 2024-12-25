@@ -15,8 +15,9 @@ import ArticleService from '../services/ArticleService.js'
 import LoadingIndicator from './LoadingIndicator.jsx'
 import { useSearchParams } from 'react-router-dom'
 import dayjs from 'dayjs'
+import LazyLoad from 'react-lazy-load'
 
-const LIMIT = 9
+const LIMIT = 20
 
 const LatestArticles = () => {
   const [articles, setArticles] = useState([])
@@ -99,12 +100,14 @@ const LatestArticles = () => {
             <Grid size={{ sm: 12, md: 6, lg: 4 }} key={article.id}>
               <Card
                 sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-                <CardMedia
-                  component="img"
-                  image={article.image_url || 'https://via.placeholder.com/180'}
-                  alt={article.title}
-                  height="180"
-                />
+                <LazyLoad height={180}>
+                  <CardMedia
+                    component="img"
+                    image={article.image_url || 'https://via.placeholder.com/180'}
+                    alt={article.title}
+                    height="180"
+                  />
+                </LazyLoad>
                 <CardContent>
                   <Typography variant="body1" gutterBottom>
                     {article.title}
