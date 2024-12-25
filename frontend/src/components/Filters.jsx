@@ -64,7 +64,7 @@ const Filters = () => {
   };
 
   return (
-    <Box sx={{ mt: 13 }}>
+    <Box sx={{ mt: 1 }}>
       <Typography variant="h6" gutterBottom>
         Advanced Filters
       </Typography>

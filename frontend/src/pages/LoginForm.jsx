@@ -7,7 +7,6 @@ import {
   Container,
   InputAdornment,
   IconButton,
-  Link,
   Avatar, Link as MuiLink,
 } from '@mui/material'
 import Grid from "@mui/material/Grid2";
@@ -102,6 +101,7 @@ const LoginForm = () => {
               mt: 3,
               mb: 2,
             }}
+            disabled={isSubmitting}
           >
             {isSubmitting ? 'Submitting ...' : 'Login'}
           </Button>

@@ -134,6 +134,7 @@ const RegisterForm = () => {
                         mt: 3,
                         mb: 2,
                     }}
+                    disabled={isSubmitting}
                   >
                       {isSubmitting ? 'Submitting ...' : 'Sign Up'}
                   </Button>

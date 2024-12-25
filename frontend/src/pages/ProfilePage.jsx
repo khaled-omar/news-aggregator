@@ -10,7 +10,6 @@ import {
 } from '@mui/material';
 import UserProfileUpdate from '../components/UserProfileUpdate.jsx';
 import UserPreferences from '../components/UserPreferences.jsx';
-import Header from '../components/layout/Header.jsx';
 
 const drawerWidth = 200;
 
@@ -30,8 +29,6 @@ const ProfilePage = () => {
 
   return (
     <>
-      {/* Header */}
-      <Header />
       {/* Main Content with Drawer */}
       <Box sx={{ display: 'flex', flex: 1 }}>
         {/* Side Navigation */}
