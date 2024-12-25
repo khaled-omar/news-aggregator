@@ -132,6 +132,7 @@ const LatestArticles = () => {
         </Grid>
         <Stack direction="row" justifyContent="center" my={4}>
           <Pagination
+            size="small"
             count={totalPages}
             page={currentPage}
             onChange={handlePageChange}
@@ -141,7 +142,6 @@ const LatestArticles = () => {
           />
         </Stack>
       </Box>}
-
     </Container>
   )
 }

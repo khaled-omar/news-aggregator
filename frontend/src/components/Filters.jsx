@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import {
   Box,
-  Checkbox,
+  Checkbox, Container,
   FormControlLabel,
   FormGroup,
   FormLabel,
   TextField,
   Typography,
-} from '@mui/material';
+} from '@mui/material'
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
@@ -64,7 +64,8 @@ const Filters = () => {
   };
 
   return (
-    <Box sx={{ mt: 1 }}>
+    <Container maxWidth="lg">
+      <Box sx={{ mt: 1 }}>
       <Typography variant="h6" gutterBottom>
         Advanced Filters
       </Typography>
@@ -144,6 +145,7 @@ const Filters = () => {
         />
       </FormGroup>
     </Box>
+    </Container>
   );
 };
 

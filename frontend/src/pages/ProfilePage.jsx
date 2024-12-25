@@ -31,7 +31,7 @@ const ProfilePage = () => {
           aria-label="Profile Tabs"
           variant="fullWidth"
         >
-          <Tab label="Update Profile" />
+          <Tab label="Profile" />
           <Tab label="Preferences" />
         </Tabs>
       </Box>
