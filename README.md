@@ -15,7 +15,7 @@ docker run --rm \
 ```
 
 3. Run docker-compose services: `./vendor/bin/sail up --build`
-4. Run migrations `../vendor/bin/sail migrate`
+4. Run migrations `./vendor/bin/sail migrate`
 5. In order to scrapp articles from news sources run the following command `./vendor/bin/sail artisan news:aggregate`
 6. Go to Backend => [Localhost:80](http://localhost:80/)
 7. Go to Frontend => [Localhost:5173](http://localhost:5173/)
