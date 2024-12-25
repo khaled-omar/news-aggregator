@@ -17,7 +17,7 @@ import { useSearchParams } from 'react-router-dom'
 import dayjs from 'dayjs'
 import LazyLoad from 'react-lazy-load'
 
-const LIMIT = 20
+const LIMIT = 9
 
 const LatestArticles = () => {
   const [articles, setArticles] = useState([])
