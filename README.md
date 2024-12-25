@@ -1,4 +1,3 @@
-
 ## Installation Steps
 We are using laravel sail read more about it from [Sail docs](https://laravel.com/docs/11.x/sail)
 
