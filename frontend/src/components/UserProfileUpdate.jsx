@@ -94,8 +94,9 @@ const UserProfileUpdate = () => {
           variant="contained"
           color="primary"
           disabled={isSubmitting}
+          sx={{ width: '30%', margin: 'auto' }}
         >
-          {isSubmitting ? 'Updating...' : 'Update Profile'}
+          {isSubmitting ? 'Updating...' : 'Update'}
         </Button>
       </Box>
     </Box>

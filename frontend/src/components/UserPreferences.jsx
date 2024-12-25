@@ -111,8 +111,9 @@ const UserPreferences = () => {
           variant="contained"
           color="primary"
           disabled={isSubmitting}
+          sx={{ width: '30%' }}
         >
-          {isSubmitting ? "Saving..." : "Save Preferences"}
+          {isSubmitting ? "Saving..." : "Save"}
         </Button>
       </Box>
     </Box>
