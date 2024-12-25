@@ -12,7 +12,7 @@ export default function Layout() {
 
       {/* Main Content */}
       <Container
-        maxWidth="lg"
+        maxWidth="xl"
         component="main"
         sx={{
           flexGrow: 1,

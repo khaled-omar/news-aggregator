@@ -33,7 +33,7 @@ const Header = () => {
 
   return (
     <AppBar position="static">
-      <Container maxWidth="lg">
+      <Container maxWidth="xl">
       <Toolbar>
         <MuiLink component={RouterLink} to="/" underline="none" color="inherit" sx={{ mr: 2, display: 'flex', alignItems: 'center' }}>
         <Icon edge="start" color="inherit" aria-label="menu" sx={{ mr: 1 }}>
